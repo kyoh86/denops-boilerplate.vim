@@ -17,3 +17,7 @@ done
 find ./* -name '*boilerplate*' | while read -r file; do
   mv "$file" "${file//boilerplate/${NAME}}";
 done
+
+# LICENSEファイルの中の年号を今年の年号に置換する
+YEAR="$(date "+%Y")"
+sed -i '' -e "s/2023/${YEAR}/g" LICENSE
