@@ -1,5 +1,7 @@
 # denops-boilerplate.vim
 
+Superpractilisticexpermientocious.
+
 ## Usage
 
 1. Fork this repository to `denops-xxx.vim`
@@ -8,7 +10,7 @@
 
 ## doc
 
-[./doc/boilerplate.txt])(./doc/boilerplate.txt)
+[./doc/boilerplate.txt](./doc/boilerplate.txt)
 
 # License
 
