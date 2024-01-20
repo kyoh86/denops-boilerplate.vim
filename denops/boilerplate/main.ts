@@ -5,8 +5,9 @@ import { join } from "https://deno.land/std@0.212.0/path/mod.ts";
 import { ensureFile } from "https://deno.land/std@0.212.0/fs/mod.ts";
 import { ensure, is } from "https://deno.land/x/unknownutil@v3.14.1/mod.ts";
 import {
+  ConsoleHandler,
   getLogger,
-  handlers,
+  RotatingFileHandler,
   setup,
 } from "https://deno.land/std@0.212.0/log/mod.ts";
 
@@ -16,8 +17,8 @@ export async function main(denops: Denops) {
 
   setup({
     handlers: {
-      console: new handlers.ConsoleHandler("DEBUG"),
-      cache: new handlers.RotatingFileHandler("DEBUG", {
+      console: new ConsoleHandler("DEBUG"),
+      cache: new RotatingFileHandler("DEBUG", {
         filename: cacheFile,
         maxBytes: 1024 * 1024,
         maxBackupCount: 1,
