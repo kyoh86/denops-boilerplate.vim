@@ -21,7 +21,7 @@ Denops commands   |boilerplate-denops-commands|
                                                          *boilerplate-install*
 Install ~
 
-You need to install *denops.vim* as a dependency.
+You need to install |denops.vim| as a dependency.
 
 * vim-denops/denops.vim https://github.com/vim-denops/denops.vim
 
