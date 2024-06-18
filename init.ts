@@ -3,7 +3,7 @@
 // boilerplate の中のプロジェクト名と説明文を変更するスクリプト
 // 例: ./init.ts --name hogehoge --descrpition fugafuga
 
-import { parseArgs } from "jsr:@std/cli@0.224.6/parse-args";
+import { parseArgs } from "jsr:@std/cli@0.224.7/parse-args";
 const parsedArgs = parseArgs(Deno.args);
 
 async function processDirectory(
