@@ -1,5 +1,5 @@
-import { Denops } from "https://deno.land/x/denops_std@v6.5.0/mod.ts";
-import {} from "https://deno.land/x/denops_std@v6.5.0/helper/mod.ts";
+import { Denops } from "https://deno.land/x/denops_std@v6.5.1/mod.ts";
+import {} from "https://deno.land/x/denops_std@v6.5.1/helper/mod.ts";
 import xdg from "https://deno.land/x/xdg@v10.6.0/src/mod.deno.ts";
 import { join } from "https://deno.land/std@0.224.0/path/mod.ts";
 import { ensureFile } from "https://deno.land/std@0.224.0/fs/mod.ts";
