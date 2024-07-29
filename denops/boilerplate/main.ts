@@ -1,41 +1,7 @@
-import { Denops } from "https://deno.land/x/denops_std@v6.5.1/mod.ts";
-import {} from "https://deno.land/x/denops_std@v6.5.1/helper/mod.ts";
-import xdg from "https://deno.land/x/xdg@v10.6.0/src/mod.deno.ts";
-import { join } from "https://deno.land/std@0.224.0/path/mod.ts";
-import { ensureFile } from "https://deno.land/std@0.224.0/fs/mod.ts";
-import { ensure, is } from "https://deno.land/x/unknownutil@v3.18.1/mod.ts";
-import {
-  ConsoleHandler,
-  getLogger,
-  RotatingFileHandler,
-  setup,
-} from "https://deno.land/std@0.224.0/log/mod.ts";
+import type { Denops } from "jsr:@denops/std@7.0.0";
+import { ensure, is } from "jsr:@core/unknownutil@3.18.1";
 
-export async function main(denops: Denops) {
-  const cacheFile = join(xdg.cache(), "denops-boilerplate-vim", "log.txt");
-  await ensureFile(cacheFile);
-
-  setup({
-    handlers: {
-      console: new ConsoleHandler("DEBUG"),
-      cache: new RotatingFileHandler("DEBUG", {
-        filename: cacheFile,
-        maxBytes: 1024 * 1024,
-        maxBackupCount: 1,
-      }),
-    },
-    loggers: {
-      "denops-boilerplate": {
-        level: "INFO",
-        handlers: ["console", "cache"],
-      },
-      "denops-boilerplate-verbose": {
-        level: "DEBUG",
-        handlers: ["cache"],
-      },
-    },
-  });
-
+export function main(denops: Denops) {
   denops.dispatcher = {
     foo(uFoo: unknown, uBar: unknown, uBaz: unknown) {
       try {
@@ -44,7 +10,7 @@ export async function main(denops: Denops) {
         const baz = ensure(uBaz, is.OptionalOf(is.String));
         console.log(foo, bar, baz);
       } catch (err) {
-        getLogger("denops-boilerplate").error(err);
+        console.error(err);
       }
     },
   };
