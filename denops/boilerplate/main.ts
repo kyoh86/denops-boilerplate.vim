@@ -1,5 +1,5 @@
 import type { Denops } from "jsr:@denops/std@~7.0.1";
-import { as, ensure, is } from "jsr:@core/unknownutil@~4.0.0";
+import { as, ensure, is } from "jsr:@core/unknownutil@~4.1.0";
 
 export function main(denops: Denops) {
   denops.dispatcher = {
