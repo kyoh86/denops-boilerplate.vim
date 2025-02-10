@@ -9,9 +9,6 @@
     "./denops/boilerplate/types.ts": "./denops/boilerplate/types.ts"
   },
   "description": "Superpractilisticexpermientocious",
-  "fmt": { "include": ["*"] },
-  "lint": { "include": ["*"] },
-  "test": { "include": ["*"] },
   "tasks": {
     "update": "deno run --allow-env --allow-read --allow-write --allow-net --allow-run=git,deno jsr:@molt/cli --write ./**/*.ts",
     "fmt": "deno fmt",
