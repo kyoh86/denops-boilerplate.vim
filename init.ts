@@ -11,6 +11,7 @@ async function processDirectory(
   name: string,
   description: string,
 ) {
+  name = name.replace(/\.n?vim$/, "");
   for (const entry of Deno.readDirSync(dirPath)) {
     const fullPath = `${dirPath}/${entry.name}`;
     const newPath = `${dirPath}/${entry.name.replace("boilerplate", name)}`;
